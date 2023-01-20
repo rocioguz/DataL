@@ -26,18 +26,6 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_alta_legal_solicitud (
                         M:struct<
                             id:struct<N:string>,
                             nombre:struct<S:string>
-                        >,
-                        M:struct<
-                            id:struct<N:string>,
-                            nombre:struct<S:string>
-                        >,
-                        M:struct<
-                            id:struct<N:string>,
-                            nombre:struct<S:string>
-                        >,
-                        M:struct<
-                            id:struct<N:string>,
-                            nombre:struct<S:string>
                         >
                     >>>
                 >
