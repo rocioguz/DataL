@@ -1,4 +1,11 @@
 SELECT 
-    Item.empRut.N as emp_rut,
-    Item.financistas.L as financistas
-FROM "prod-dynamo"."ddb_ygg_condiciones_comerciales";
+    Item.empRut.N as empRut,
+    financistas.M.razonSocial.S as financistas_razon_social,
+    financistas.M.rut.N as financistas_rut,
+    CAST(From_iso8601_timestamp(financistas.M.fechaCreacion.S) AS timestamp) as financistas_fecha_creacion,
+    CAST(From_iso8601_timestamp(financistas.M.fechaModificacion.S) AS timestamp) as financistas_fecha_modificacion,
+    financistas.M.financiamientoDirecto.M.escenario.S as financistas_financiamientoDirecto_escenario,
+    financistas.M.financiamientoDirecto.M.tramos.L as financistas_financiamientoDirecto_tramos
+FROM "prod-dynamo"."ddb_ygg_condiciones_comerciales",
+UNNEST(Item.financistas.L) as t(financistas)
+order by Item.empRut.N  desc
