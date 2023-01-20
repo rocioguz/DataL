@@ -1,8 +1,11 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_oferta_financiamiento_pronto_pago ( 
     Item struct<
-        receptorRut:struct<N:string>,
+        empRut:struct<N:string>,
         emisorRut_folio_tipoDte:struct<S:string>,
-        
+        disponible:struct<BOOL:string>,
+        empRut_disponible:struct<S:string>,
+        empRut_disponible_receptorRut:struct<S:string>,
+        rutaXml:struct<S:string>
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
