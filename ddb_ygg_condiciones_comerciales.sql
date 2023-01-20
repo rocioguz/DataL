@@ -7,7 +7,14 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_condiciones_comerciales (
                 fechaModificacion:struct<S:string>,
                 financiamientoDirecto:struct<M:struct<
                     escenario:struct<S:string>,
-                    tramos:struct<L:string>
+                    tramos:struct<L:array<struct<
+                        M:struct<
+                        anticipo:struct<N:string>,
+                        desde:struct<N:string>,
+                        hasta:struct<N:string>,
+                        tasa:struct<N:string>
+                        >
+                    >>>
                 >>,
                 razonSocial:struct<S:string>,
                 rut:struct<N:string>
