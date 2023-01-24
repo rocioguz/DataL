@@ -2,7 +2,21 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_confirming_operacion (
     Item struct<
         empRut:struct<N:string>,
         pgcId:struct<N:string>,
-        comprobante:struct<L:string>,
+        comprobante:struct<L:array<struct< 
+            M:struct<
+                codigo:struct<S:string>,
+                fechas:struct<M:struct<
+                    creacion:struct<S:string>,
+                    nomina:struct<S:string>,
+                    operacion:struct<S:string>
+                >>,
+                link:struct<S:string>,
+                montoFactura:struct<N:string>,
+                motivoRechazo:struct<S:string>,
+                proveedorNombre:struct<S:string>,
+                proveedorRut:struct<N:string>
+            >
+        >>>,
         detalle:struct<M:struct<
             clienteRazonSocial:struct<S:string>,
             clienteRut:struct<N:string>,
@@ -68,7 +82,14 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_confirming_operacion (
         >>,   
         fechaActualizacion:struct<S:string>,
         fechaSolicitud:struct<S:string>,
-        firmantes:struct<L:string>,
+        firmantes:struct<L:array<struct< 
+            M:struct<
+                estado:struct<S:string>,
+                fechaFirma:struct<S:string>,
+                nombre:struct<S:string>,
+                rut:struct<N:string>
+            >
+        >>>,
         rutaArchivo:struct<S:string>,
         simId:struct<N:string>,
         subOperaciones:struct<M:struct<
