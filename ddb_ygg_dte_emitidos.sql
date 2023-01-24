@@ -62,12 +62,25 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_dte_emitidos (
         folio:struct<S:string>,
         hashCesiones:struct<M:string>,
         montoTotal:struct<N:string>,
+        notasCD:struct<L:array<struct<
+            M:struct<
+                emisorRazonSocial:struct<S:string>,
+                emisorRut:struct<N:string>,
+                fechaEmision:struct<S:string>,
+                fechaRecepcion:struct<S:string>,
+                folio:struct<N:string>,
+                montoIva:struct<N:string>,
+                montoTotal:struct<N:string>,
+                receptorRazonSocial:struct<S:string>,
+                tipoDte:struct<N:string>
+            >
+        >>>,
         origen:struct<S:string>,
         pgcDataHash:struct<S:string>,
         razonSocial:struct<S:string>,
         recaudaciones:struct<M:string>,
-        receptorRut:struct<S:string>
-        
+        receptorRut:struct<S:string>,
+        rutaXml:struct<S:string>
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
