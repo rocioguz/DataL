@@ -35,7 +35,19 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_dte_recibidos (
         fechaModificacion:struct<S:string>,
         folio:struct<S:string>,
         montoTotal:struct<N:string>,
-        notasCD:struct<L:string>,
+        notasCD:struct<L:array<struct<
+            M:struct<
+                emisorRazonSocial:struct<S:string>,
+                emisorRut:struct<N:string>,
+                fechaEmision:struct<S:string>,
+                fechaRecepcion:struct<S:string>,
+                folio:struct<N:string>,
+                montoIva:struct<N:string>,
+                montoTotal:struct<N:string>,
+                receptorRazonSocial:struct<S:string>,
+                tipoDte:struct<N:string>
+            >
+        >>>,
         origen:struct<S:string>,
         pgcDataHash:struct<S:string>,
         razonSocial:struct<S:string>
