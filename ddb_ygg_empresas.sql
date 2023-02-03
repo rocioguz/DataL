@@ -126,5 +126,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_empresas (
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-LOCATION 's3://destination-guou-bucket-master/ygg-empresas/AWSDynamoDB/01674399712598-9a36535b/data/'
+LOCATION 's3://destination-guou-bucket-master/DynamoDB/ygg-empresas/AWSDynamoDB/01674822959521-78d00979/data/'
 TBLPROPERTIES ( 'has_encrypted_data'='true')
