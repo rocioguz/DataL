@@ -1,0 +1,11 @@
+CREATE TABLE "prod-dynamo"."ygg_empresas_caracteristicasContribuyentes" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_empresas/ygg_empresas_caracteristicasContribuyentes/'
+) AS
+SELECT Item.rut.N as rut,
+  Item.activo.N as activo,
+  cc.M.caracteristica.S as cc_caracteristica,
+  cc.M.fechaInicio.S as cc_fechaInicio
+FROM "prod-dynamo"."ddb_ygg_empresas",
+  UNNEST(Item.caracteristicasContribuyentes.L) as t(cc)
+order by Item.rut.N desc
