@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_dte_recibidos" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_dte_recibidos/'
+) AS
 SELECT 
     Item.empRut.N as emp_rut,
     Item.emisorRut_folio_tipoDte.S as emisorRut_folio_tipoDte,
