@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_financiamiento_operacion" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_financiamiento_operacion/'
+) AS
 SELECT 
     Item.empRut.N as emp_rut,
     Item.pgcId.N as pgc_id,
