@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_pronto_pago_nomina" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_pronto_pago_nomina/'
+) AS
 SELECT 
     Item.empRut.N as emp_rut,
     Item.timestamp.N as timestamp,
