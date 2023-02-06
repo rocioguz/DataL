@@ -1,6 +1,6 @@
 CREATE TABLE "prod-dynamo"."ygg_cesion_historial" WITH (
   format = 'parquet',
-  external_location = 's3://destination-athena-results/ygg_alta_legal_solicitud/'
+  external_location = 's3://destination-athena-results/ygg_cesion_historial/'
 ) AS
 SELECT 
     Item.empRut.N as emp_rut,
