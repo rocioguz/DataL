@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_empresas" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_empresas/'
+) AS
 SELECT 
     Item.rut.N as rut,
     Item.activo.N as activo,
