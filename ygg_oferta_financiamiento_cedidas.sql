@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_oferta_financiamiento_cedidas" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_oferta_financiamiento_cedidas/'
+) AS
 SELECT 
     Item.cesionarioRut.N as cesionario_rut,
     Item.cedenteRut_folio_tipo.S as cedente_rut_folio_tipo,
