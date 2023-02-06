@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_condiciones_comerciales" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_condiciones_comerciales/'
+) AS
 SELECT 
     Item.empRut.N as empRut,
     financistas.M.razonSocial.S as financistas_razon_social,
