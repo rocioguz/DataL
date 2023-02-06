@@ -1,3 +1,7 @@
+CREATE TABLE "prod-dynamo"."ygg_oferta_financiamiento_pronto_pago" WITH (
+  format = 'parquet',
+  external_location = 's3://destination-athena-results/ygg_oferta_financiamiento_pronto_pago/'
+) AS
 SELECT 
     Item.empRut.N as emp_rut,
     Item.emisorRut_folio_tipoDte.S as emisor_rut_folio_tipo_dte,
