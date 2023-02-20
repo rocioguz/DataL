@@ -1,6 +1,6 @@
 CREATE TABLE "prod-dynamo"."ygg_oferta_financiamiento_cedidas" WITH (
   format = 'parquet',
-  external_location = 's3://destination-athena-results/ygg_oferta_financiamiento_cedidas/'
+  external_location = 's3://staging.layer/DynamoDB/ygg_oferta_financiamiento_cedidas/'
 ) AS
 SELECT 
     CAST (Item.cesionarioRut.N as int) as cesionario_rut,
