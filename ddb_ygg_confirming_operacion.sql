@@ -99,5 +99,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_confirming_operacion (
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-LOCATION 's3://destination-guou-bucket-master/ygg-confirming-operacion/AWSDynamoDB/01673794853252-11b4c4ef/data/'
+LOCATION 's3://destination-guou-bucket-master/DynamoDB/ygg-confirming-operacion/AWSDynamoDB/01672097417314-640e74c2/data/'
 TBLPROPERTIES ( 'has_encrypted_data'='true');
