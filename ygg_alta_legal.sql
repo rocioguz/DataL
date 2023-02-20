@@ -1,6 +1,6 @@
 CREATE TABLE "prod-dynamo"."ygg_alta_legal_solictud" WITH (
   format = 'parquet',
-  external_location = 's3://raw.layer/DynamoDB/ygg_alta_legal_solicitud/'
+  external_location = 's3://staging.layer/DynamoDB/ygg_alta_legal_solicitud/'
 ) AS
 SELECT CAST(Item.empRut.N as int) as emp_rut,
   CAST(Item.pgcId.N as int) as pgc_id,
