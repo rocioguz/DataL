@@ -119,5 +119,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_financiamiento_operacion_dte (
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-LOCATION 's3://destination-guou-bucket-master/ygg-financiamiento-operacion-dte/AWSDynamoDB/01673794853877-0ad68ceb/data/'
+LOCATION 's3://destination-guou-bucket-master/DynamoDB/ygg-financiamiento-operacion-dte/AWSDynamoDB/01672097417736-57b4b8d8/data/'
 TBLPROPERTIES ( 'has_encrypted_data'='true');
