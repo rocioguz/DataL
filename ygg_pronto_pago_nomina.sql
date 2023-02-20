@@ -1,6 +1,6 @@
 CREATE TABLE "prod-dynamo"."ygg_pronto_pago_nomina" WITH (
   format = 'parquet',
-  external_location = 's3://staging.layer/DynamoDB/ddb_ygg_pronto_pago_nomina/'
+  external_location = 's3://staging.layer/DynamoDB/ygg_pronto_pago_nomina/'
 ) AS
 SELECT CAST (Item.empRut.N as int) as emp_rut,
   Item.timestamp.N as timestamp,
