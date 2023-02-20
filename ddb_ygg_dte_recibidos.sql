@@ -54,5 +54,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_dte_recibidos (
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-LOCATION 's3://destination-guou-bucket-master/ygg-dte-recibidos/AWSDynamoDB/01673794853654-8ac8d84f/data/'
+LOCATION 's3://destination-guou-bucket-master/DynamoDB/ygg-dte-recibidos/AWSDynamoDB/01672097417564-4a19b458/data/'
 TBLPROPERTIES ( 'has_encrypted_data'='true');
