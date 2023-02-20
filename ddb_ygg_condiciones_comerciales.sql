@@ -23,5 +23,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_condiciones_comerciales (
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-LOCATION 's3://destination-guou-bucket-master/ygg-condiciones-comerciales/AWSDynamoDB/01673794853062-e8a47172/data/'
+LOCATION 's3://destination-guou-bucket-master/DynamoDB/ygg-condiciones-comerciales/AWSDynamoDB/01673531364962-a81bb6bf/data/'
 TBLPROPERTIES ( 'has_encrypted_data'='true');
