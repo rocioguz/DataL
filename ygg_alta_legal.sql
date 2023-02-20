@@ -1,9 +1,9 @@
-CREATE TABLE "prod-dynamo"."ygg_alta_legal_solicitud" WITH (
+CREATE TABLE "prod-dynamo"."ygg_alta_legal_solictud" WITH (
   format = 'parquet',
-  external_location = 's3://destination-athena-results/ygg_alta_legal_solicitud/'
+  external_location = 's3://raw.layer/DynamoDB/ygg_alta_legal_solicitud/'
 ) AS
-SELECT Item.empRut.N as emp_rut,
-  Item.pgcId.N as pgc_id,
+SELECT CAST(Item.empRut.N as int) as emp_rut,
+  CAST(Item.pgcId.N as int) as pgc_id,
   CAST(
     From_iso8601_timestamp(Item.condicionesContrato.M.fechaActualizacion.S) AS timestamp
   ) as condiciones_contrato_fecha_actualizacion,
@@ -12,7 +12,9 @@ SELECT Item.empRut.N as emp_rut,
   ) as condiciones_contrato_fecha_creacion,
   Item.condicionesContrato.M.firmantes.L as condiciones_contrato_firmantes,
   Item.condicionesContrato.M.numeroDocumentoIdentidad.S as condiciones_contrato_numero_doc_identidad,
-  Item.condicionesContrato.M.pgcSolicitudId.N as condiciones_contrato_pgc_solicitud_id,
+  CAST(
+    Item.condicionesContrato.M.pgcSolicitudId.N as int
+  ) as condiciones_contrato_pgc_solicitud_id,
   Item.condicionesContrato.M.razonSocial.S as condiciones_contrato_razon_social,
   Item.contratoLink.S as contrato_link,
   Item.documentos.L as documentos,
