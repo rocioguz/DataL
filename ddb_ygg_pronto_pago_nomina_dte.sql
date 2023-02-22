@@ -23,5 +23,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ddb_ygg_pronto_pago_nomina_dte (
     >
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-LOCATION 's3://destination-guou-bucket-master/ygg-pronto-pago-nomina-dte/AWSDynamoDB/01673794854372-9f44c0cb/data/'
+LOCATION 's3://destination-guou-bucket-master/DynamoDB/ygg-pronto-pago-nomina-dte/AWSDynamoDB/01673531388126-3124d2bc/data/'
 TBLPROPERTIES ( 'has_encrypted_data'='true');
